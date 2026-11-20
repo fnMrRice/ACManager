@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1" charset="utf-8"><meta name="format-detection" content="telephone=no"><meta data-interface-type="SLP5.0"><title>TL-AC100</title><link rel="shortcut icon" href="/web-static/imgs/favicon.ico?random=20260817190248"><link rel="stylesheet" href="/web-static/networkMaintain/tums-components.css?random=20260817190248"><script src="/web-static/networkMaintain/vue.min.js?random=20260817190248"></script><script src="/web-static/networkMaintain/tums-components.umd.min.js?random=20260817190248"></script><script src="/web-static/md52.js?random=20260817190248"></script></head><body id="refresh"><script>// 获取 URL 参数中的 token
+      const search = window.location.search;
+      const params = search.slice(1).split("&").reduce((acc, pair) => {
+        const [key, value] = pair.split("=");
+        acc[key] = value;
+        return acc;
+      }, {});
+      const token = params.token;
+
+      if(token) {
+        window.location.href = `/#/systemState/homePage?token=${token}`;
+      } else {
+        window.location.href = '/';
+      }</script></body></html>

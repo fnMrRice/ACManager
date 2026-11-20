@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AC 管理登录</title>
+<style>body{margin:0;background:#f2f6f7;font:16px system-ui;color:#203d47}main{max-width:360px;margin:12vh auto;background:white;padding:36px;border-radius:8px;box-shadow:0 4px 30px #1231}h1{font-size:24px}label{display:block;margin:22px 0 6px}input,button{box-sizing:border-box;width:100%;padding:12px;font:inherit;border:1px solid #aabdc2;border-radius:4px}button{margin-top:26px;background:#008b98;color:white;border:0;cursor:pointer}p{font-size:14px;line-height:1.6;color:#607982}#error{color:#b23824;min-height:24px}</style></head>
+<body><main><h1>AC 管理</h1><p>使用 OpenWrt 插件中设置的管理账号登录。</p>
+<form id="login"><label for="user">用户名</label><input id="user" autocomplete="username" maxlength="64" required>
+<label for="password">密码</label><input id="password" type="password" autocomplete="current-password" maxlength="256" required>
+<button>登录</button><p id="error" role="alert"></p></form></main>
+<script>document.getElementById('login').onsubmit=async function(e){e.preventDefault();let b=this.querySelector('button');b.disabled=true;try{let r=await fetch('/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:document.getElementById('user').value,password:document.getElementById('password').value})});let j=await r.json();if(!r.ok)throw Error(j.error||'登录失败');location.replace('/#/systemState/homeApStatus');}catch(e){document.getElementById('error').textContent=e.message;}finally{b.disabled=false;}};</script></body></html>

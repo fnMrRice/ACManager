@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="104px" height="48px" viewBox="0 0 104 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Views/Topo/fireWall</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Views/Topo/fireWall" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Views/Topo/底框normal">
+            <rect id="矩形" x="0" y="0" width="104" height="48" rx="4"></rect>
+        </g>
+        <path d="M76.8333333,3 C77.4776655,3 78,3.52233446 78,4.16666667 L78,43.8333333 C78,44.4776655 77.4776655,45 76.8333333,45 L27.1666667,45 C26.5223345,45 26,44.4776655 26,43.8333333 L26,4.16666667 C26,3.52233446 26.5223345,3 27.1666667,3 L76.8333333,3 Z M76,5 L28,5 L28,43 L76,43 L76,5 Z" id="形状结合" fill="#787878"></path>
+        <path d="M76,5 L76,43 L28,43 L28,5 L76,5 Z M58,34 L30,34 L30,41 L58,41 L58,34 Z M74,34 L60,34 L60,41 L74,41 L74,34 Z M44,25 L30,25 L30,32 L44,32 L44,25 Z M74,25 L46,25 L46,32 L74,32 L74,25 Z M58,16 L30,16 L30,23 L58,23 L58,16 Z M74,16 L60,16 L60,23 L74,23 L74,16 Z M44,7 L30,7 L30,14 L44,14 L44,7 Z M74,7 L46,7 L46,14 L74,14 L74,7 Z" id="形状结合" fill="#999999"></path>
+        <path d="M58,34 L58,41 L30,41 L30,34 L58,34 Z M74,34 L74,41 L60,41 L60,34 L74,34 Z M44,25 L44,32 L30,32 L30,25 L44,25 Z M74,25 L74,32 L46,32 L46,25 L74,25 Z M58,16 L58,23 L30,23 L30,16 L58,16 Z M74,16 L74,23 L60,23 L60,16 L74,16 Z M44,7 L44,14 L30,14 L30,7 L44,7 Z M74,7 L74,14 L46,14 L46,7 L74,7 Z" id="形状结合" fill="#BFBFBF"></path>
+    </g>
+</svg>

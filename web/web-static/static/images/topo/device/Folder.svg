@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="104px" height="48px" viewBox="0 0 104 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>illustration/Device/Topo/Folder</title>
+    <defs>
+        <linearGradient x1="42.3909505%" y1="100%" x2="42.3909505%" y2="-2.01366701e-12%" id="linearGradient-1">
+            <stop stop-color="#B3B3B3" offset="0%"></stop>
+            <stop stop-color="#D9D9D9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="6.78623824e-13%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#E6E6E6" offset="0%"></stop>
+            <stop stop-color="#F5F5F5" offset="25.9783064%"></stop>
+            <stop stop-color="#FAFAFA" offset="50.0156948%"></stop>
+            <stop stop-color="#F5F5F5" offset="70.4205137%"></stop>
+            <stop stop-color="#E6E6E6" offset="87.3622349%"></stop>
+            <stop stop-color="#D9D9D9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="illustration/Device/Topo/Folder" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="topo/背景透明">
+            <rect id="矩形" x="0" y="0" width="104" height="48" rx="4"></rect>
+        </g>
+        <g id="编组-9">
+            <rect id="矩形" x="0" y="0" width="104" height="48" rx="4"></rect>
+            <path d="M43.7888974,3.5 C44.4798849,3.5 45.1554118,3.7045331 45.7303481,4.08782397 L50.2188008,7.08012574 C50.6294696,7.35390493 51.1119888,7.5 51.6055513,7.5 L75.5,7.5 C75.7761424,7.5 76.0261424,7.61192881 76.2071068,7.79289322 C76.3880712,7.97385763 76.5,8.22385763 76.5,8.5 L76.5,12.5 L27.5,12.5 L27.5,4.5 C27.5,4.22385763 27.6119288,3.97385763 27.7928932,3.79289322 C27.9738576,3.61192881 28.2238576,3.5 28.5,3.5 Z" id="Rectangle-25备份" stroke="#333333" fill="url(#linearGradient-1)"></path>
+            <path d="M76.9306563,12.5 C77.3448699,12.5 77.7198699,12.6678932 77.9913165,12.9393398 C78.261034,13.2090574 78.4285132,13.5810133 78.4306359,13.9920894 L77.4411491,43.0511067 C77.4273752,43.4551393 77.2547266,43.8173626 76.9844546,44.0785778 C76.7141826,44.339793 76.3462873,44.5 75.94202,44.5 L28.05798,44.5 C27.6537127,44.5 27.2858174,44.339793 27.0155454,44.0785778 C26.7452734,43.8173626 26.5726248,43.4551393 26.5588509,43.0511067 L25.5702146,14.0511067 C25.5561018,13.6371336 25.7111209,13.256631 25.9731614,12.9760935 C26.233532,12.6973439 26.5995643,12.5172892 27.0103278,12.501161 Z" id="Rectangle-25" stroke="#333333" fill="url(#linearGradient-2)"></path>
+        </g>
+    </g>
+</svg>

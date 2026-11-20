@@ -1,0 +1,28 @@
+# Local dependencies and generated builds
+/.tools/
+/build/
+/dist/
+/windows/*.spec
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local settings, credentials, and live device captures
+/data/
+.env
+.env.*
+!.env.example
+
+# Local research, firmware inputs, and investigation tools
+/analysis/
+/TL-AC100 V6.0升级软件20260817_1.0.3.zip
+/TL-AC100 V6.0升级软件20260817_1.0.3/
+/tools/disasm.py
+/tools/disasm_ap.py
+/tools/inventory.py
+/tools/prepare_assets.py
+/tools/probe_lan.py
+/tools/probe_ap_handshake.py
+/tests/fixtures/discovery-apdb-v1.bin

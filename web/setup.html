@@ -1,0 +1,55 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AC 服务 · 连接与验证</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#263b45;font:14px "Microsoft YaHei",sans-serif}header{background:#00a6ac;color:#fff;padding:22px 32px;display:flex;justify-content:space-between}header a{color:white}main{max-width:1180px;margin:24px auto;padding:0 20px}.notice{background:#fff4dd;border-left:4px solid #e7ae43;padding:14px;line-height:1.8}section{background:#fff;padding:22px;margin:18px 0;border:1px solid #e0e6e9;border-radius:4px}h2{font-size:18px;margin:0 0 18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px}label{display:flex;gap:10px;align-items:center}label span{min-width:128px}input,select,textarea{border:1px solid #cbd6db;border-radius:3px;padding:9px;flex:1;min-width:0;font:inherit}input[type=checkbox]{flex:none}button,.button{background:#00a6ac;color:#fff;border:0;border-radius:3px;padding:10px 18px;cursor:pointer;margin:12px 8px 0 0}button.secondary{background:#647984}button.danger{background:#a44c36}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:10px;border-bottom:1px solid #e5eaed;text-align:left}pre{white-space:pre-wrap;max-height:280px;overflow:auto;font:13px Consolas,monospace;background:#f5f7f9;padding:14px}.muted{color:#70828c;font-size:12px}.status{font-weight:bold;color:#00797d}#error{color:#ad3927;white-space:pre-wrap}@media(max-width:800px){.grid{grid-template-columns:1fr}main{padding:10px}section{overflow:auto}}
+</style>
+<header><b>AC 服务 / 连接与验证</b><a href="/#/systemState/homeApStatus">进入原版 AC 网页 →</a></header>
+<main><div class="notice">已在 TL-7AP5102HI-PoE 薄款（方）易展版 V1.0 验证接入、持续通信及 LED 指令应答。无线配置下发和其他型号仍需验证。仅管理允许列表中的 AP；未实现的接口会明确报错。</div>
+<p id="error" role="alert"></p>
+<section><h2>1. 连接设置 <span id="running" class="status"></span></h2><div class="grid">
+<label><span>本机 AC IPv4</span><input id="ac_ip" placeholder="与 AP 通信的电脑网卡地址"></label>
+<label><span>监听 IPv4</span><input id="listen_ip" value="0.0.0.0"></label>
+<label><span>允许管理的 AP IP</span><input id="allowed_ips" placeholder="192.168.1.10,192.168.1.11"></label>
+<label><span>控制器名称</span><input id="name"></label>
+<label><span>主动管理（实验）</span><input type="checkbox" id="enabled">不勾选时仅观察</label>
+<label><span>仅应答发现</span><input type="checkbox" id="discovery_only">诊断模式，不接管或下发配置</label>
+<label><span>使用 DTLS</span><input type="checkbox" id="dtls" checked></label>
+<label><span>旧 AP 握手兼容</span><input type="checkbox" id="legacy_dtls">允许 DTLS 1.0 / AES</label>
+<label><span>加密库</span><select id="dtls_backend"><option value="auto">自动选择</option><option value="gnutls">GnuTLS</option><option value="openssl">OpenSSL</option></select></label>
+<label><span>证书文件</span><input id="cert" placeholder="PEM 文件完整路径"></label>
+<label><span>私钥文件</span><input id="key" placeholder="PEM 文件完整路径"></label>
+<label><span>信任的 AP CA</span><input id="ca" placeholder="CA PEM 文件完整路径"></label>
+<label><span>验证 AP 证书</span><input type="checkbox" id="verify_peer" checked></label>
+<label><span>明文兼容实验</span><input type="checkbox" id="allow_plaintext">仅供隔离测试网</label>
+<label><span>控制 / 数据端口</span><input id="control_port" type="number" value="5246"><input id="data_port" type="number" value="5247"></label>
+</div><button id="save">保存设置</button><button id="start">启动</button><button id="stop" class="secondary">停止</button><button id="generate" class="secondary">生成本地测试证书</button>
+<p class="muted">测试证书仅用于模拟验证，不保证真实 AP 信任。未放宽系统防火墙；如 Windows 提示网络访问，请只允许 AP 所在的专用网络。AP 应处于 FIT 模式，与电脑可达；测试时停用原 AC 的管理功能。</p></section>
+<section><h2>2. AP 列表与状态</h2><table><thead><tr><th>IP / MAC</th><th>型号编号</th><th>接入状态</th><th>射频</th><th>最近操作</th><th>选择</th></tr></thead><tbody id="aps"></tbody></table><p class="muted">收到发现报文不等于完成接管。只有 RUN 状态允许配置；“已确认接收”仅表示 AP 返回成功码，不代表无线终端已经连通。</p></section>
+<section><h2>3. 下发无线配置</h2><div class="grid">
+<label><span>目标 AP IP</span><input id="target" placeholder="从上方列表选择"></label>
+<label><span>配置格式</span><select id="dialect"><option value="auto">根据报文识别（无法确定则拒绝）</option><option value="legacy9">旧版：私有元素 9（实验）</option><option value="modern99">新版：私有元素 99（实验）</option></select></label>
+<label><span>SSID</span><input id="ssid" maxlength="32" value="AC-Lab"></label>
+<label><span>WPA2 / AES 密码</span><input id="password" type="password" autocomplete="new-password" placeholder="8–63 个 ASCII 字符，不保存到磁盘"></label>
+<label><span>Radio ID / WLAN ID</span><input id="radio" type="number" min="1" max="31" value="1"><input id="wlan" type="number" min="1" max="16" value="1"></label>
+<label><span>VLAN ID</span><input id="vlan" type="number" min="0" max="4094" value="0"></label>
+<label><span>隐藏 SSID</span><input id="hidden" type="checkbox"></label><label><span>客户端隔离</span><input id="isolate" type="checkbox"></label>
+</div><button id="apply">下发到选中 AP</button><button id="led_on" class="secondary">LED 开</button><button id="led_off" class="secondary">LED 关</button></section>
+<section><h2>运行与接口日志</h2><pre id="logs">等待启动</pre><details><summary>原版网页近期接口调用（不记录密码和报文内容）</summary><pre id="requests"></pre></details><button id="export" class="secondary">导出诊断摘要</button><button id="shutdown" class="danger">停止网页服务</button></section></main>
+<script>
+'use strict';const token='__TOKEN__',el=id=>document.getElementById(id);let last={};
+async function api(path,data={}){const r=await fetch('/api/'+path,{method:'POST',headers:{'Content-Type':'application/json','X-AC-Token':token},body:JSON.stringify(data)});const v=await r.json();if(!r.ok||v.error)throw Error(v.error||r.status);return v}
+function run(fn){return async()=>{el('error').textContent='';try{await fn()}catch(e){el('error').textContent=e.message}}}
+const bools=['enabled','dtls','verify_peer','allow_plaintext','discovery_only','legacy_dtls'];const fields=['ac_ip','listen_ip','name','cert','key','ca','control_port','data_port','dtls_backend'];
+function fill(c){fields.forEach(k=>el(k).value=c[k]);bools.forEach(k=>el(k).checked=c[k]);el('allowed_ips').value=c.allowed_ips.join(',')}
+function config(){let c={};fields.forEach(k=>c[k]=el(k).value);bools.forEach(k=>c[k]=el(k).checked);c.allowed_ips=el('allowed_ips').value.split(/[,，\s]+/).filter(Boolean);return c}
+el('save').onclick=run(async()=>{await api('save',config());el('error').textContent='设置已保存；启动后生效。'});
+el('start').onclick=run(async()=>{await api('save',config());await api('start');await refresh()});el('stop').onclick=run(async()=>{await api('stop');await refresh()});
+el('generate').onclick=run(async()=>{const c=await api('certificates');['cert','key','ca'].forEach(k=>el(k).value=c[k]);el('error').textContent='已生成测试证书；真实 AP 是否信任尚未验证。请保存设置。'});
+for(const action of ['apply','led_on','led_off'])el(action).onclick=run(async()=>{const data={ip:el('target').value,action};if(action==='apply')data.profile={ssid:el('ssid').value,key:el('password').value,radio:+el('radio').value,wlan:+el('wlan').value,vlan:+el('vlan').value,dialect:el('dialect').value,hidden:el('hidden').checked,isolate:el('isolate').checked};const r=await api('action',data);el('error').textContent='已发送，等待 AP 确认；请查看列表中的操作结果。';await refresh()});
+const states={observed:'仅观察',discovered:'已发现',joined:'已接入',configured:'已交换配置',run:'RUN',offline:'离线'};
+const results={pending:'等待确认',acknowledged:'已确认接收',rejected:'AP 拒绝',timeout:'超时',unconfirmed:'无法确认'};
+async function refresh(){last=await api('status');el('running').textContent=last.running?'运行中':'已停止';el('aps').replaceChildren();for(const ap of last.aps){const tr=document.createElement('tr');for(const value of [ap.ip+' / '+(ap.mac||'—'),ap.model_id||'—',states[ap.state]||ap.state,(ap.radio_ids||[]).join(', '),ap.last_operation?(results[ap.last_operation.status]||ap.last_operation.status):'—']){let td=document.createElement('td');td.textContent=value;tr.appendChild(td)}const td=document.createElement('td'),b=document.createElement('button');b.textContent='选择';b.onclick=()=>{el('target').value=ap.ip;if(ap.radio_ids?.length)el('radio').value=ap.radio_ids[0]};td.appendChild(b);tr.appendChild(td);el('aps').appendChild(tr)}if(!last.aps.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=6;td.textContent='尚未收到 AP 发现报文';tr.appendChild(td);el('aps').appendChild(tr)}el('logs').textContent=last.events.map(e=>e.time+'  '+e.message).join('\n')||'暂无事件';el('requests').textContent=JSON.stringify(last.requests,null,2);}
+el('export').onclick=()=>{const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(last,null,2)],{type:'application/json'}));a.href=url;a.download='ac-diagnostics.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+el('shutdown').onclick=run(async()=>{await api('shutdown');document.body.textContent='网页服务已停止，可以关闭此页面。'});
+run(async()=>{fill(await api('config'));await refresh()})();setInterval(()=>refresh().catch(()=>{}),2500);
+</script></html>

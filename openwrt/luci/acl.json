@@ -1,0 +1,7 @@
+{
+  "luci-app-tplink-ac": {
+    "description": "Configure TP-LINK AC web access",
+    "read": {"uci": ["tplink_ac"], "ubus": {"network.interface.lan": ["status"]}},
+    "write": {"uci": ["tplink_ac"]}
+  }
+}

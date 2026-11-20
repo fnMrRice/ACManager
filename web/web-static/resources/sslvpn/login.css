@@ -1,0 +1,75 @@
+
+
+    html{
+        width: 100%;
+        height: 100%;
+        font-style: sans-serif;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans',sans-serif;
+        margin: 0;
+        background-color: #fff;
+    }
+    #login{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        margin: -250px 0 0 -150px;
+        width: 300px;
+        height: 400px;
+    }
+    #login h1{
+        color: #000000;
+        /* text-shadow:0 0 10px; */
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    h1{
+        font-size: 2em;
+        margin: 0.67em 0;
+    }
+    input{
+        width: 278px;
+        height: 18px;
+        margin-bottom: 20px;
+        outline: none;
+        padding: 10px;
+        font-size: 16px;
+        color: #000000;
+        caret-color: #007bff;
+        /* text-shadow:1px 1px 1px; */
+        border-top: 1px solid #312E3D;
+        border-left: 1px solid #312E3D;
+        border-right: 1px solid #312E3D;
+        border-bottom: 1px solid #56536A;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+    input:focus {
+        border: 1px #007bff;
+        border-style: solid;
+        box-shadow: 1px 1px #007bff;
+    }
+    .but{
+        width: 300px;
+        /* min-height: 20px; */
+        height: 50px;
+        display: block;
+        background-color: #007aff;
+        border: 1px solid #3762bc;
+        color: #fff;
+        padding: 9px 14px;
+        font-size: 17px;
+        line-height: normal;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .app_link{
+        color: #1485ff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+

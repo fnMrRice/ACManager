@@ -1,0 +1,8 @@
+{
+  "admin/network/tplink_ac": {
+    "title": "TP-LINK AC",
+    "order": 60,
+    "action": {"type": "view", "path": "tplink_ac/config"},
+    "depends": {"acl": ["luci-app-tplink-ac"], "uci": {"tplink_ac": true}}
+  }
+}

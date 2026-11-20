@@ -1,0 +1,217 @@
+$theme1: #1785e6;
+$theme1_1: #1476cc;
+$theme1_2: #0f5999;
+
+$white: #fff;
+$black: #000;
+
+$grey1: #333;
+$grey2: #666;
+$grey3: #999;
+$grey4: #b3b3b3;
+$grey5: #ccc;
+$grey6: #d9d9d9;
+$grey7: #e6e6e6;
+$grey8: #f5f5f5;
+$grey9: #1a1a1a;
+$grey10: #212121;
+$grey11: #bfbfbf;
+$grey12: #ebebeb;
+
+$echart_color_1: #0b9efa;
+$echart_color_2: #5ed66e;
+$echart_color_3: #ffa31a;
+$echart_color_4: #52cbff;
+$echart_color_5: #ff847b;
+$echart_color_6: #ffd014;
+$echart_color_7: #66f;
+$echart_color_8: #c885ff;
+$echart_color_9: #4dd6c4;
+$echart_color_10: #a6d645;
+$echart_color_11: #5173b8;
+$echart_color_12: #ffa51a;
+$echart_color_13: $grey6;
+
+$port_edit_hint: #2578b8;
+$port_edit_hint_bg: #ebf6ff;
+
+$menu_bg: #f0f0f0;
+$project_bg: #edeff0;
+
+$error: #e85e54;
+$error_bg: #faeceb;
+$error_icon: #ff3f3a;
+
+$success: #00d048;
+
+$light_blue: #d1e7fa;
+$light_blue1: #e5f3ff;
+
+$header_bg: #414141;
+
+$light_green: #0fb896;
+$light_slider: #7F7F7F;
+
+$pwd_strength_weak_text: #eb5e54;
+$pwd_strength_weak_bg: #eb5e54;
+$pwd_strength_middle_text: #e07b00;
+$pwd_strength_middle_bg: #fa0;
+$pwd_strength_strong_text: #32a658;
+$pwd_strength_strong_bg: #4dbf73;
+$pwd_middle_text: #a3653b;
+$pwd_middle: #ffd014;
+$pwd_strong: #5ed66e;
+
+$wrong_tip: #eb5e54;
+
+$warn_bg: #fff9e0;
+$warn_border: #f5ebc4;
+$warn_color: #a3653b;
+
+// 适用于title和body
+$font_primary: $grey1;
+$font_2th: $grey2;
+$font_3rd: $black;
+// 适用于placeholder和hint text
+$font_hint: $grey3;
+$font_disable: $grey4;
+$font_highlight: $theme1_1;
+$font_error: $error;
+
+$btn_primary: $theme1;
+$btn_primary_hover: $theme1_1;
+$btn_primary_press: $theme1_2;
+$btn_2th: $grey7;
+$btn_2th_hover: $grey5;
+$btn_2th_press: $grey4;
+$btn_text: $white;
+$btn_plain: $white;
+$btn_3rd: $grey1;
+$btn_3rd_hover: $grey2;
+$btn_3rd_press: $grey9;
+
+$line_btn_border: $grey5;
+$line_table_line1: $grey6;
+$line_table_line2: $grey7;
+
+$bg_normal: $grey8;
+$bg_hover: $grey7;
+$bg_active: #d1e7fa;
+$bg_basic: $white;
+$bg_sidebar: $grey9;
+$bg_error: $error_bg;
+
+$switch_ball: $white;
+$switch_bg_active: $light_green;
+$switch_bg_inactive: $grey3;
+
+$radio_bg_inactive: $white;
+$radio_bg_inactive_disable: $grey7;
+$radio_bg_active: $theme1;
+$radio_bg_active_hover: $theme1_2;
+$radio_bg_active_disable: $grey5;
+$radio_inner: $white;
+$radio_line_inactive: $grey5;
+$radio_line_inactive_hover: $grey1;
+
+$checkbox_inactive_line: $grey5;
+$checkbox_inactive_line_hover: $grey1;
+$checkbox_inactive_line_disable: $grey5;
+$checkbox_inactive_bg: $white;
+$checkbox_inactive_bg_disable: $grey7;
+$checkbox_active_bg: $theme1;
+$checkbox_active_bg_hover: $theme1_2;
+$checkbox_active_bg_disable: $grey5;
+$checkbox_inner: $white;
+
+$grid_thead_text: $grey2;
+$grid_expand_text: $grey2;
+$grid_tbody_text: $grey1;
+$grid_divide_line: $grey7;
+$grid_highlight_line: $theme1;
+$grid_bg: $grey8;
+$grid_expand_bg: #fafafa;
+
+$page_text: $grey3;
+$page_goto_text: $grey2;
+$page_active_text: $theme1;
+$page_link_text: $grey1;
+
+$page_server_unbind: $grey3;
+$page_server_running: $light_green;
+$page_server_stop: #eb5e54;
+$page_server_error: #ffa31a;
+$page-server-stopping: #999;
+
+$page_divide_line: #f0f0f0;
+
+$tag_input: #777;
+
+$template_matched: #d7eeff;
+$condition_text: #595f67;
+
+$add_device_error: #ff5447;
+$device_abnormal: #ff9f00;
+
+$room_model_hover: #ebebeb;
+$error_bg: #ffe2e0;
+
+$device_online: #24c387;
+$room_template: #e0f2ff;
+$empty_text: #949494;
+
+$deploy-tip: #ff9f00;
+
+$dev_status_online: #00bb94;
+$dev_status_connected: #00bb94;
+$dev_status_disconnected: #999;
+$dev_status_outline: #ff675c;
+$dev_status_abnormal: #ff9f00;
+$dev_status_reboot: #00ceff;
+$dev_status_upgrade: #d381ff;
+$dev_status_config: #fc0;
+
+$align_line: #59ffe3;
+$stream_color: #67b8ff;
+$panel_line: #808080;
+
+$dev_icon_bg: #f0f3f5;
+$dev_icon_border: #D0D4D9;
+
+$dialog_default_bt: $grey7;
+$dialog_default_bt_1: $grey5;
+$dialog_default_bt_2: $grey4;
+
+$permit: #49cc5b;
+$deny: #ff675c;
+
+$policy_rule_tip_text: #2578b8;
+$policy_rule_tip_bg: #ebf6ff;
+$policy_rule_tip_border: #e0f2ff;
+
+$radius_stats_account: #59C28E;
+$radius_stats_self_register: #5CA2ED;
+$radius_stats_spooled_register: #FCA77C;
+$radius_stats_today_increase: #4DC4D3;
+
+$warning_color: #5A5E66;
+
+$radius_stats_total_revenue1: #73CE9A;
+$radius_stats_total_revenue2: #5AC07A;
+$radius_stats_last_thirty_day_revenue1: #F9D45E;
+$radius_stats_last_thirty_day_revenue2: #F2C244;
+$radius_stats_last_seven_day_revenue1: #70A0F6;
+$radius_stats_last_seven_day_revenue2: #4D80F2;
+$radius_stats_current_day_revenue1: #ECB3A6;
+$radius_stats_current_day_revenue2: #FFA17E;
+
+$radius_stats_column_name: #878D99;
+$radius_stats_column_value: #262729;
+
+$search_input_placeholder_color: #B8B8B8;
+
+$radius_time_error_bg: #FFECEB;
+$radius_time_error_font: #CC5249;
+$self_goto_pay_color: #FF3232;
+
+$self_mobile_active_tab: #0096FF;

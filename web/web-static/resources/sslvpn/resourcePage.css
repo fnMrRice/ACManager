@@ -1,0 +1,105 @@
+#full-page {
+    width: 100%;
+    /* width: 960px; */
+    min-width: 960px;
+    height: 100%;
+    background-color: #a5a462;
+    position: absolute;
+}
+
+body {
+    overflow: scroll;
+}
+
+.top-bar-container {
+    width: 100%;
+    height: 50px;
+    background-color: #346ad5;
+    position: relative;
+}
+
+.top-bar-container .top-bar-logo {
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+    color: #ffffff;
+    float: left;
+}
+
+.top-bar-container .access_link {
+    font-size: 15px;
+    text-align: center;
+    width: auto;
+    color: #ffffff;
+    float: right;
+    margin-left: 20px;
+}
+
+.top-bar-container a:hover .access_link {
+    color: #000000;
+}
+
+
+
+.welcome-bar-container {
+    width: 100%;
+    height: 120px;
+    background-color: #e0e0e0;
+    position: relative;
+}
+
+.welcome-bar-container .welcome {
+    font-size: 25px;
+    text-align: center;
+    color: #000000;
+    float: left;
+}
+
+.resourceGroupTab-bar-container {
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.resourceList-container-bar-container {
+    width: 100%;
+    height: 600px;
+    background-color: #ec101b;
+    position: relative;
+}
+
+.resourceList-container-inner {
+    /* width: 100%;
+    height: 100%;
+    background-color: #25e073;
+    position: absolute; */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    zoom: 1;
+    position: absolute;
+}
+
+.resourceItem {
+    float: left;
+    margin: 2%;
+    width: 20%;
+    height: 120px;
+    background-color: #ffffff;
+    border: #000000 2px;
+}
+
+.resourceItem-left {
+    float: left;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.resourceItem-right {
+    float: left;
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}

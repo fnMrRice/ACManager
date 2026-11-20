@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=http://www.w3.org/1999/xhtml><head><meta charset=utf-8><script>function browser() {
+            var ua = navigator.userAgent;
+            var env = {
+                type: '',
+                version: ''
+            };
+
+            var BROWSER = {
+                IE: 'ie',
+                EDGE: 'edge',
+                FIREFOX: 'firefox',
+                CHROME: 'chrome',
+                OPERA: 'opera',
+                SAFARI: 'safari'
+            };
+
+            var rIE = /msie ((\d+\.)+\d+)/i;
+            var rIE11 = /Trident\/[\d.]+[\w\W]*rv:11\.[\d.]+/i;
+            var rEdge = /(edge)\/(\d+\.\d+)/i;
+            var rChrome = /(chrome)\/(\d+\.\d+)/i;
+            var rFirefox = /(firefox)\/(\d+\.\d+)/i;
+            var rOpera = /(opera).(\d+\.\d+)/i;
+            var rSarari = /version\/(\d+\.\d+).*(safari)/i;
+            var isIE = rIE.test(ua) ? (document.mode || RegExp['$1']) : false;
+
+            if (isIE !== false) {
+                var ieVersion = parseInt(isIE);
+                if (ieVersion === 10) {
+                    env.version = 10;
+                } else if (ieVersion === 9) {
+                    env.version = 9;
+                } else if (ieVersion === 8) {
+                    env.version = 8;
+                } else if (ieVersion === 7) {
+                    env.version = 7;
+                } else if (ieVersion <= 6) {
+                    env.version = 6;
+                }
+
+                env.type = BROWSER.IE;
+            } else if (rIE11.test(ua)) {
+                env.type = BROWSER.IE;
+                env.version = 11;
+            } else {
+                [rEdge, rChrome, rFirefox, rOpera, rSarari].some(function(r) {
+                    var matches = ua.match(r);
+                    if (matches !== null) {
+                        env.type = matches[1].toLowerCase();
+                        env.version = parseInt(matches[2]);
+                        if (/\d/.test(env.type)) {
+                            env.type = env.version;
+                            env.version = parseInt(env.type);
+                        }
+                        return true;
+                    }
+                });
+            }
+
+            return env;
+        }
+
+        var browserInfo = browser();
+        if (browserInfo.type === 'ie' && browserInfo.version < 9) {
+            // location.pathname = 'static/browser.html';
+            window.alert('您的浏览器版本过低，请升级到IE9及以上');
+        }
+
+        // 获取luci的stok串
+        window.acUrl = $.su.dsUrl();</script><script src=/web-static/js/sensorPlugin/js/vue.min.js></script><script src=/web-static/js/sensorPlugin/js/tums-components.umd.min.js></script><link rel=stylesheet href=/web-static/js/sensorPlugin/css/tums-components.css><link href=/web-static/js/sensorPlugin/checkup/css/app.css rel=preload as=style><link href=/web-static/js/sensorPlugin/checkup/js/app.js rel=preload as=script><link href=/web-static/js/sensorPlugin/checkup/js/chunk-vendors.js rel=preload as=script><link href=/web-static/js/sensorPlugin/checkup/css/app.css rel=stylesheet></head><body><div id=app><router-view></router-view></div><script src=/web-static/js/sensorPlugin/checkup/js/chunk-vendors.js></script><script src=/web-static/js/sensorPlugin/checkup/js/app.js></script></body></html>

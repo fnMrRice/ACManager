@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TP-LINK</title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			p,ul,li{margin:0px;padding:0px;}
+			li{list-style:none;}
+			a{text-decoration:none;color:#000;}
+
+			/*设置版心*/
+			.mian{
+				width:1200px;
+				margin:0 auto;
+				font-family: sans-serif;
+			}
+			.fl{float:left;}
+			.fr{float:right;}
+			.clearFixed:after{
+				content:"";
+				display:block;
+				clear:both;
+			}
+
+			.header{
+				height:160px;
+			}
+			.header .h_top{
+				height:50px;
+				background: #1c5fbe;
+			}
+			.header .h_top .topCon{
+				height:40px;
+			}
+			.header .h_top .topCon .conLeft{
+				height: 40px;
+				line-height: 40px;
+			}
+			.header .h_top .topCon .conLeft .leftTxt1{
+				height:40px;
+			}
+			.header .h_top .topCon .conLeft .leftTxt1 .logo{
+				font-size:26px;
+				color:#ffffff;
+				margin-right: 32px;
+				font-family: sans-serif;
+			}
+			.header .h_bottom{
+				height: 120px;
+				background: #fafbfd;
+			}
+
+			.header .h_bottom .logo{
+				font-size:32px;
+				color:#000000;
+				height: 60px;
+				line-height: 120px;
+				text-align: center;
+				font-family: sans-serif;
+			}
+
+			/*content start*/
+			.content .line1{
+				margin-top:20px;
+			}
+			.content .line1{
+				margin-bottom:50px;
+			}
+			.content .line1 .conUl li{
+				margin-bottom:17px;
+
+			}
+			.content .line1 .conUl li .conBox{
+				width:500px;
+				border:2px solid #eaeeed;
+				padding:24px 100px 16px;
+			}
+			.content .line1 .conUl li .conBox .version{
+				font-size:18px;
+				font-weight: bold;
+			}
+			.content .line1 .conUl li .conBox .btn{
+				font-size:16px;
+				color:#8282a3;
+			}
+
+			.content .line1 .conUl li .conBox .btn2{
+				margin-top:13px;
+				margin-bottom:13px;
+			}
+
+			.content .line1 .conUl li .conBox .download{
+				background: rgb(88, 88, 235);
+				border:1px solid #eaeeed;
+				padding:8px 25px;
+				border-radius:5px;
+				margin-right:12px;
+				font-size:12px;
+				color:#ffffff;
+			}
+			.content .line1 .conUl li .conBox .pBor{
+				border-bottom:1px dashed #eaeeed;
+				padding-bottom:20px;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="header">
+				<div class="h_top">
+					<div class="topCon mian clearFixed">
+						<div class="conLeft fl">
+							<div class="leftTxt1 fl">
+								<p class="logo" >TP-LINK </p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="h_bottom">
+					<p class="logo" >SSL VPN 客户端下载 </p>
+				</div>
+			</div>
+
+			<div class="content mian">
+				<div class="line1">
+					<ul class="conUl">
+						<li class="clearFixed">
+							<div class="conBox fl">
+								<p class="version clearFixed">
+									<span class="jobTxt fl">Windows版</span>
+								</p>
+
+								<p class="btn btn2">大小: </p>
+								<p class="btn btn2">版本: 1.0</p>
+								<p class="btn btn2">适应系统: </p>
+								<p class="btn btn2 ">更新时间: 2021/2/18</p>
+								<!-- 此处链接需要改为安装程序的链接 -->
+								<a href="/openvpn.exe" download="openvpn.exe" class="clearFixed  pBor">
+									<span class="btn fr download">立即下载</span>
+								</a>
+							</div>
+						</li>
+
+						<li class="clearFixed">
+							<div class="conBox fl">
+								<p class="version clearFixed">
+									<span class="jobTxt fl">Mac版</span>
+								</p>
+
+								<p class="btn btn2">大小: </p>
+								<p class="btn btn2">版本: 1.0</p>
+								<p class="btn btn2">适应系统: </p>
+								<p class="btn btn2">更新时间: 2021/2/18</p>
+								<!-- 此处链接需要改为安装程序的链接 -->
+								<a href="/Tunnelblick.dmg" download="Tunnelblick.dmg" class="clearFixed  pBor">
+									<span class="btn fr download">立即下载</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
